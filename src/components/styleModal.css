@@ -1,0 +1,32 @@
+.ant-modal-content {
+    border-radius: 16px;
+    padding: 0;
+}
+
+.ant-modal-header {
+    border-radius: 16px 16px 0 0;
+    background: #ECEEF1;
+    font-size: 17px;
+}
+
+.ant-modal-title {
+    font-weight: bold;
+}
+
+.ant-modal-body {
+    padding-top: 17px;
+    padding-bottom: 35px;
+}
+
+.subtitle {
+    color: #555555;
+    font-size: 13px;
+}
+
+.ant-row.ant-form-item:first-child {
+    margin-bottom: 12px;
+}
+
+.ant-row.ant-form-item:last-child {
+    margin-bottom: 0;
+}
