@@ -10,8 +10,8 @@ import {
    setModalActiveAdd,
    setModalActiveRemove, setModalItemRemove
 } from "./redux/actions";
-import ModalAdd from "./components/ModalAdd";
-import ModalRemove from "./components/ModalRemove";
+import ModalAdd from "./components/Modals/ModalAdd";
+import ModalRemove from "./components/Modals/ModalRemove";
 import {Col, Row} from "antd";
 
 function App(props) {

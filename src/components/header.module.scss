@@ -1,0 +1,40 @@
+.header {
+  margin: 80px 0 20px;
+
+  .header__title {
+    font-size: 34px;
+    font-weight: 700;
+  }
+
+  .header__action {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    .header__input {
+      border-radius: 24px;
+      line-height: 30px;
+      width: 348px;
+      padding-left: 50px
+    }
+
+    .header__search-icon {
+      position: absolute;
+      font-size: 20px;
+      opacity: .4;
+      top: 13px;
+      left: 20px;
+      pointer-events: none;
+      z-index: 1000;
+    }
+
+    .header__add-button {
+      background: #00A7C7;
+      width: 134px;
+      height: 44px;
+      border-radius: 8px;
+      border: none;
+      font-weight: 600;
+    }
+  }
+}

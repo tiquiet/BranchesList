@@ -1,7 +1,9 @@
 import React, {useEffect} from 'react';
 import {Table, Typography} from "antd";
 import {PlusOutlined, SettingFilled} from '@ant-design/icons';
-
+import './mainTableGeneralStyles.css';
+import s from './MainTable.module.scss';
+import classNames from "classnames";
 
 const MainTable = (props) => {
 
@@ -19,23 +21,21 @@ const MainTable = (props) => {
          dataIndex: 'address',
          key: 'address',
          sorter: (a, b) => a.address.street.slice(4).localeCompare(b.address.street.slice(4)),
-         render: address => <div style={{
-            display: 'flex',
-            flexDirection: 'column'
-         }}>
-            <Text strong={true} style={{color: '#00A7C7'}}>{address.street}</Text>
-            <Text type="secondary">{address.city}</Text>
-         </div>,
+         render: address => <div className={s.address}>
+            <Text strong={true}
+                  className={s.address__street}>
+               {address.street}
+            </Text>
+            <Text type="secondary"
+                  className={s.address__city}>{address.city}</Text>
+         </div>
       },
       {
          title: 'Телефон',
          dataIndex: 'telephone',
          key: 'telephone',
          sorter: true,
-         render: telephones => <div style={{
-            display: 'flex',
-            flexDirection: 'column'
-         }}>
+         render: telephones => <div className={s.telephone}>
             {telephones.map(telephone => <span key={telephone}>{telephone}</span>)}
          </div>
       },
@@ -56,35 +56,19 @@ const MainTable = (props) => {
          dataIndex: 'status',
          key: 'status',
          sorter: (a, b) => +b.status - +a.status,
-         render: status => status ? <Text style={{
-            background: 'rgba(25,187,80,0.2)',
-            padding: '3px 9px',
-            borderRadius: '16px',
-            fontSize: '13px',
-            fontWeight: 600
-         }}>Активный</Text> : <Text type="secondary"
-                                    style={{
-                                       background: 'rgba(108, 119, 134, 0.2)',
-                                       padding: '3px 9px',
-                                       borderRadius: '16px',
-                                       fontSize: '13px',
-                                       fontWeight: 600
-                                    }}>Неактивный</Text>
-
+         render: status => status ? <Text className={classNames(s.status, s.status__active)}>Активный</Text> :
+                                    <Text className={classNames(s.status, s.status__inactive)}
+                                          type="secondary">Неактивный</Text>
       },
       {
          title: 'Действия',
          dataIndex: 'action',
          key: 'action',
-         render: (_, data) => <PlusOutlined onClick={() => {
-            props.setActive(true)
-            props.setModalItem(data)
-         }}
-                                            rotate={45}
-                                            style={{
-                                               display: 'block',
-                                               fontSize: '32px',
-                                               color: '#C4C4C4'
+         render: (_, data) => <PlusOutlined rotate={45}
+                                            className={s.action}
+                                            onClick={() => {
+                                               props.setActive(true)
+                                               props.setModalItem(data)
                                             }}/>
       },
    ]
@@ -106,12 +90,12 @@ const MainTable = (props) => {
    return !props.loading ?
       <Table columns={columns}
              dataSource={props.fetchedData.filter(dataFilter)}
-             pagination={false}/>
-      : <div style={{display: 'flex'}}><SettingFilled spin style={{
-         fontSize: '100px',
-         textAlign: 'center',
-         margin: '130px auto 0'
-      }}/></div>
+             pagination={false}
+      />
+      : <div className={s.loading__container}>
+         <SettingFilled spin
+                        className={s.loading}/>
+   </div>
 };
 
 export default MainTable;

@@ -1,0 +1,48 @@
+.address {
+  display: flex;
+  flex-direction: column;
+
+  .address__street {
+    color: #00A7C7;
+  }
+
+  .address__city {
+    font-weight: 500;
+  }
+}
+
+.telephone {
+  display: flex;
+  flex-direction: column;
+}
+
+.status {
+  padding: 3px 9px;
+  border-radius: 16px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.status__active {
+  background: rgba(25,187,80, 0.2)
+}
+
+.status__inactive {
+  background: rgba(108, 119, 134, 0.2)
+}
+
+.action {
+  display: block;
+  font-size: 32px;
+  color: #C4C4C4;
+}
+
+.loading__container {
+  display: flex;
+
+  .loading {
+    font-size: 100px;
+    text-align: center;
+    margin: 130px auto 0;
+  }
+}

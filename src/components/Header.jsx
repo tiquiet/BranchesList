@@ -1,63 +1,28 @@
 import React from 'react';
 import {Button, Input, Typography} from "antd";
-import styled from 'styled-components';
 import {SearchOutlined} from '@ant-design/icons';
+import s from './header.module.scss';
 
 const Header = (props) => {
    return (
-      <Container>
-         <Typography.Title style={{
-            fontSize: '34px',
-            fontWeight: 700,
-         }}>Филиалы</Typography.Title>
-         <ActionArea style={{position: 'relative'}}>
+      <div className={s.header}>
+         <Typography.Title className={s.header__title}>Филиалы</Typography.Title>
+         <div className={s.header__action}>
             <Input value={props.search}
                    allowClear={true}
-                   onChange={e => {
-                      props.changeSearchString(e.target.value)
-                   }}
+                   onChange={e => {props.changeSearchString(e.target.value)}}
                    placeholder="Поиск"
-                   style={{
-                      borderRadius: '24px',
-                      lineHeight: '30px',
-                      width: '348px',
-                      paddingLeft: '50px'
-                   }}/>
-            <SearchOutlined style={{
-               position: 'absolute',
-               fontSize: '20px',
-               opacity: '.4',
-               top: '13px',
-               left: '20px',
-               pointerEvents: 'none',
-               zIndex: 1000
-            }} />
+                   className={s.header__input}/>
+            <SearchOutlined className={s['header__search-icon']}/>
             <Button type="primary"
-                    onClick={() => {
-                       props.setActive(true)
-                    }}
-                    style={{
-                       background: '#00A7C7',
-                       width: '134px',
-                       height: '44px',
-                       borderRadius: '8px',
-                       border: 'none',
-                       fontWeight: 600
-                    }}>Добавить</Button>
-         </ActionArea>
-      </Container>
+                    onClick={() => {props.setActive(true)}}
+                    className={s['header__add-button']}>
+               Добавить
+            </Button>
+         </div>
+      </div>
 
    );
 };
-
-const Container = styled.div`
-  margin: 80px 0 20px;
-`;
-
-const ActionArea = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-
 
 export default Header;

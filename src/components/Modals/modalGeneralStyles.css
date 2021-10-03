@@ -18,11 +18,6 @@
     padding-bottom: 35px;
 }
 
-.subtitle {
-    color: #555555;
-    font-size: 13px;
-}
-
 .ant-row.ant-form-item:first-child {
     margin-bottom: 12px;
 }

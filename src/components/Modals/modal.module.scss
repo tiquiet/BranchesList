@@ -1,0 +1,51 @@
+.modal {
+  max-width: 327px;
+  max-height: 323px;
+
+  .modal__subtitle {
+    color: #555555;
+    font-size: 13px;
+  }
+
+  .modal__input {
+    border-radius: 8px;
+    height: 38px;
+  }
+
+  .modal__delete-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    height: 60px;
+    margin-bottom: 30px;
+  }
+
+  .modal__buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .modal__button__active {
+      width: 171px;
+      height: 44px;
+      border-radius: 8px;
+      border: none;
+      font-weight: 600;
+    }
+
+    .modal__button__save {
+      background: #00A7C7;
+    }
+
+    .modal__button__delete {
+      background: #C44062;
+    }
+
+    .modal__button__cancel {
+      border: none;
+      box-shadow: none;
+      font-weight: 600;
+    }
+  }
+}

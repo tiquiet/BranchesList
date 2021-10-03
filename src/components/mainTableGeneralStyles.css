@@ -1,0 +1,11 @@
+.ant-table-thead > tr >th {
+    background: #DFE4EB;
+}
+
+.ant-table .ant-table-tbody > tr:hover > td {
+    background: #DFF3F7;
+}
+
+.ant-table-thead {
+    background: #DFE4EB;
+}
